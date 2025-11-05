@@ -1,7 +1,7 @@
 class Url:
-    # BASE_URL = 'https://stellarburgers.nomoreparties.site'
-    BASE_URL = 'https://rickandmortyapi.com/api'
+    BASE_URL = 'https://stellarburgers.education-services.ru/.'
 
 class Endpoints:
-    # REGISTER_USER = '/api/auth/register'
-    CHARACTER = '/character'
+    REGISTER_USER = '/api/auth/register'
+    USER = '/api/auth/user'
+
