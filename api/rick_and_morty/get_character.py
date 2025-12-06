@@ -1,6 +1,6 @@
 import allure
 import requests
-from endpoins.endpoints import Url, Endpoints
+from api.endpoins.endpoints import Url, Endpoints
 
 class GetCharacter:
 

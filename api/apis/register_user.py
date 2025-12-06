@@ -1,7 +1,7 @@
 from faker import Faker
 import requests
-from endpoins.endpoints import Url, Endpoints
-from helpers.helper import generate_password
+from api.endpoins.endpoints import Url, Endpoints
+from api.helpers.helper import generate_password
 
 class RegisterUser:
 

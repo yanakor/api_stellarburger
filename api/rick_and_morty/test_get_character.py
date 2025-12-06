@@ -1,5 +1,5 @@
 import allure
-from rick_and_morty.get_character import GetCharacter
+from api.rick_and_morty.get_character import GetCharacter
 
 @allure.feature('Character')
 @allure.suite('')
