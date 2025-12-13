@@ -1,3 +1,4 @@
+name: docker-compose
 services:
   tests:
     image: ui:v1
