@@ -7,7 +7,10 @@ on:
       ENV:
         description: 'окружение: dev/DEV'
         required: true
-        type: environment
+        type: choice
+        options:
+          - dev
+          - uat
       BROWSER:
         description: 'выберите браузер'
         required: true
