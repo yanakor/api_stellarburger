@@ -1,4 +1,5 @@
 import allure
+import pytest
 import requests
 from api.endpoins.endpoints import Url, Endpoints
 
@@ -6,6 +7,7 @@ from api.endpoins.endpoints import Url, Endpoints
 @allure.suite('Регистрация пользователя')
 class TestRegistration:
 
+    @pytest.mark.smoke
     def test_register_new_user_success(self, register_new_user_and_return_response):
         response = register_new_user_and_return_response[0]
 
@@ -18,7 +20,7 @@ class TestRegistration:
                 response.json() == f"{{'success': True, 'user': {'email': {email}, 'name': {name}},'accessToken':"
                                    f" {access_token}, 'refreshToken':{refresh_token}}}")
 
-
+    @pytest.mark.smoke
     def test_register_new_user_with_same_email(self, register_new_user_and_return_response):
 
         data = register_new_user_and_return_response[1]
@@ -33,6 +35,7 @@ class TestRegistration:
 
         assert response.status_code == 403 and response.text == '{"success":false,"message":"User already exists"}'
 
+    @pytest.mark.smoke
     def test_register_new_user_without_email(self, register_new_user_and_return_response):
 
         data = register_new_user_and_return_response[1]
