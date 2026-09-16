@@ -2,7 +2,7 @@ import pytest
 from playwright.sync_api import Page
 from api.endpoins.endpoints import Url
 
-from ui.pages import RegisterPage, BasePage
+from ui.pages import RegisterPage
 
 @pytest.fixture
 def register_page(page:Page):
