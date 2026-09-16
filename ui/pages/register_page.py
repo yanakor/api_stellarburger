@@ -1,17 +1,20 @@
 from ui.base.base_page import BasePage
 from playwright.sync_api import Page
-import allure
 
-from ui.locators.register_page_locators import RegisterPageLocators
+from ui.locators.register_page_locators import LoginPageLocators
+
 
 class RegisterPage(BasePage):
 
     def __init__(self, page:Page, base_url):
         super().__init__(page, base_url)
 
+    def open_main_page(self):
+        self.open(self.base_url)
 
-    @allure.step('')
-    def fill_register_field(self):
-        self.fill_field(locator=RegisterPageLocators.NAME_FIELD, text='')
-        self.fill_field(locator=RegisterPageLocators.EMAIL_FIELD, text='')
-        self.fill_field(locator=RegisterPageLocators.PASSWORD_FIELD, text='')
+    def click_on_login_btn(self):
+        self.click_on_el(LoginPageLocators.LOGIN_BUTTON)
+
+    def fill_login_form(self, login, password):
+        self.fill_field(LoginPageLocators.LOGIN_EMAIL_FIELD, text=login)
+        self.fill_field(LoginPageLocators.LOGIN_PASSWORD_FIELD, text=password)

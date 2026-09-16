@@ -11,7 +11,7 @@ class BasePage:
 
     @allure.suite('Открытие страницы')
     def open(self, url):
-        self.page.goto(url)
+        self.page.goto(self.base_url + url)
 
     @allure.step('')
     def click_on_el(self, locator):
